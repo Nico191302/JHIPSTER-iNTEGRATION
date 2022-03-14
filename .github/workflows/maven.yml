@@ -29,3 +29,8 @@ jobs:
           heroku_api_key: ${{secrets.API_HEROKU}}
           heroku_app_name: "obscure-bastion-32893" #Must be unique in Heroku
           heroku_email: "nicogeo13@gmail.com"
+    - name: TU
+      run: |
+        mvnw test
+        npmw test
+    
