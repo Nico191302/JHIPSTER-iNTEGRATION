@@ -27,7 +27,7 @@ jobs:
     - name: TU
       run: |
         mvn test
-        mpn test
+        npm test
     - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
       with:
           heroku_api_key: ${{secrets.API_HEROKU}}
