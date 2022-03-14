@@ -48,9 +48,13 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Nico191302_JHIPSTER-iNTEGRATION
-    - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
-      with:
-          heroku_api_key: ${{secrets.API_HEROKU}}
-          heroku_app_name: "obscure-bastion-32893" #Must be unique in Heroku
-          heroku_email: "nicogeo13@gmail.com"
+  deploy:
+      runs-on: ubuntu-lastest
+      needs: build
+      steps:
+        - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+          with:
+            heroku_api_key: ${{secrets.API_HEROKU}}
+            heroku_app_name: "obscure-bastion-32893" #Must be unique in Heroku
+            heroku_email: "nicogeo13@gmail.com"
 
