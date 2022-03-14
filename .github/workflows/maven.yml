@@ -26,8 +26,8 @@ jobs:
       run: mvn -B package --file pom.xml
     - name: TU
       run: |
-        mvnw test
-        npmw test
+        ./mvnw test
+        mpn test
     - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
       with:
           heroku_api_key: ${{secrets.API_HEROKU}}
