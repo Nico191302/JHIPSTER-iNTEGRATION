@@ -26,7 +26,7 @@ jobs:
       run: mvn -B package --file pom.xml
     - name: TU
       run: |
-        ./mvnw test
+        mvn test
         mpn test
     - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
       with:
