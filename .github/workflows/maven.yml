@@ -30,7 +30,7 @@ jobs:
         npm test
     - name: TI
       run: |
-        mvn verify
+        mvn -e verify
     - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
       with:
           heroku_api_key: ${{secrets.API_HEROKU}}
